@@ -1,0 +1,359 @@
+<div class="fondo" >
+  <div class="indice" style="height: 30px; background-color: orange;">
+    <h6 class="indice1" style="color:white; padding-left:10px; padding-top: 7px;" >INDICE -  Abril - Nro. 149 </h6>
+  </div>
+    <div class="row quitar600 "  >
+      <div class="col-6 col-sm-0" style="transform: rotate(-2deg); max-height: 800px;min-height: 900px;;">
+        <div style="margin-left: 35px; ">
+          <div >
+            <img class="imagen" src="{{link}}" width="100%" alt="" style="border-radius: 10px">
+
+            <div class="tituloBox" style="border-radius: 10px;box-shadow: 1px 1px 2px black">
+              <a routerLink="articulo/{{this.ruta}}"
+              target="_blank">
+               <h1 class="titulo truncar3" style="font-size: 30px;line-height: 35px; color:white;margin-top:10px; text-shadow: 2px 2px 2px black; padding-bottom:0px;    margin-left: -10px;
+                line-height: 35px;margin-left:0px">{{titulo}} </h1>
+            </a>
+            <a routerLink="articulo/{{this.ruta}}"  target="_blank">
+            <p  class="descripcion truncar4" style="color:black; margin-top:-2px;">{{descripcion}}  <span></span></p>
+          </a>
+
+            <!-- <button class="btn btn-dark">Ingresar</button> -->
+
+            <br>
+          </div>
+          </div>
+
+        </div>
+
+      </div>
+       <div class="col-6" style="margin-top:0px!important">
+      <div class="row">
+    <!-- <div class="col-1">
+    <div>
+ <h1 class="marg" style="color: #665622;margin-top:10px">》</h1>
+    <h1 class="marg" style="color: #a73b0a; margin-top:-13px">》</h1>
+    <h1 class="marg" style="color:  #7C5100;margin-left:-5px; ">》</h1>
+    <h1 class="marg" style=" color:#536800; margin-top:-4px ">》</h1>
+    <h1 class="marg" style="color: #3E2800;margin-left:-5px;margin-top:-4px">》</h1>
+
+  </div>
+  </div>   -->
+
+  <div class="col-12" style="padding:0px; margin:0px; padding-left:10px; margin-top: 20px;" >
+
+
+    <div class="hov margenes" style=" background-color:orange; box-shadow: 1px 1px 3px rgb(57, 57, 57);" (mouseover)="cambioImagen1()">
+      <a  target="_blank" href="/articulo/{{this.ruta}}" >
+            <p class="titulo" style="margin-top:15px; margin-left:10px"  >
+              {{this.data?.art1}}
+
+                <h1 style="padding-bottom:10px; margin-top:-22px; margin-left: 20px; bottom:10px; color: brown; font-size: 15px;margin-bottom: 20px;">
+                  Por: Alex Guillermo Martín</h1>
+
+
+
+      </a>
+    </div>
+
+
+    <div class="hov margenes "  style="background-color: orange ;box-shadow: 1px 1px 3px rgb(57, 57, 57);"(mouseover)="cambioImagen2()">
+      <a   target="_blank" href="/articulo/{{this.ruta}}" target="_blank">
+    <p class="titulo">{{ this.data?.art2}} </p>
+    <h1 style="padding-bottom:10px; margin-top:-22px; margin-left: 20px; bottom:10px; color: brown; font-size: 15px;margin-bottom: 20px;">
+      Por: Alex Guillermo Martín</h1>
+
+
+      </a>
+
+    </div>
+
+  <div class=" hov margenes"  style="background-color:orange;box-shadow: 1px 1px 3px rgb(57, 57, 57);" (mouseover)="cambioImagen3()">
+    <a routerLink="/articulo/{{this.ruta}}"
+      target="_blank">
+  <p class="titulo ">
+    {{this.data?.art3}} </p>
+    <h1 style="padding-bottom:10px; margin-top:-22px; margin-left: 20px; bottom:10px; color: brown; font-size: 15px;margin-bottom: 20px;">
+      Por: Corina María Altamirano</h1>
+
+  </a>
+  <!-- <p class="autor">Por: {{data[2]?.autor}}</p> -->
+  </div>
+
+  <div  class="hov margenes"  style="background-color:orange;box-shadow: 1px 1px 3px rgb(57, 57, 57); " (mouseover)="cambioImagen4()">
+    <a routerLink="/articulo/{{this.ruta}}"
+      target="_blank">
+  <p class="titulo" >{{this.data?.art4}}</p>
+  <h1 style="padding-bottom:10px; margin-top:-22px; margin-left: 20px; bottom:10px; color: brown; font-size: 15px;margin-bottom: 20px;">
+    Por: Mariana Neme</h1>
+
+  </a>
+  <!-- <p class="autor">Por: {{data[3]?.autor}}</p> -->
+  </div>
+  <div class="hov margenes"  style="background-color:orange;box-shadow: 1px 1px 3px rgb(57, 57, 57); "(mouseover)="cambioImagen5()">
+    <a routerLink="/articulo/{{this.ruta}}"
+      target="_blank">
+  <p class="titulo" >{{this.data?.art5}}</p>
+  <h1 style="padding-bottom:10px; margin-top:-22px; margin-left: 20px; bottom:10px; color: brown; font-size: 15px;margin-bottom: 20px;">
+    Por: Horacio Beto Fuentes</h1>
+</a>
+  <!-- <p class="autor">Por: {{data[4]?.autor}}</p> -->
+  </div>
+  <div class="hov margenes"  style="background-color:orange; box-shadow: 1px 1px 3px rgb(57, 57, 57);"(mouseover)="cambioImagen6()">
+    <a routerLink="/articulo/{{this.ruta}}"
+    target="_blank">
+    <p class="titulo"  >{{this.data?.art6}}</p>
+    <h1 style="padding-bottom:10px; margin-top:-22px; margin-left: 20px; bottom:10px; color: brown; font-size: 15px;margin-bottom: 20px;">
+      Por: J. Lucas Sbriglio</h1>
+    </a>
+    <!-- <p class="autor">Por: {{data[4]?.autor}}</p> -->
+    </div>
+    <div class="hov margenes"  style="background-color: orange; box-shadow: 1px 1px 3px rgb(57, 57, 57);"(mouseover)="cambioImagen7()">
+      <a routerLink="/articulo/{{this.ruta}}"
+      target="_blank">
+      <p class="titulo" >{{this.data?.art7}}</p>
+      <h1 style="padding-bottom:10px; margin-top:-22px; margin-left: 20px; bottom:10px; color: brown; font-size: 15px;margin-bottom: 20px;">
+        Por: José Herminio Hernández</h1>
+      </a>
+      <!-- <p class="autor">Por: {{data[4]?.autor}}</p> -->
+      </div>
+      <div class="hov margenes"  style="background-color: orange; box-shadow: 1px 1px 3px rgb(57, 57, 57);"(mouseover)="cambioImagen8()">
+        <a routerLink="/articulo/{{this.ruta}}"
+        target="_blank">
+        <p class="titulo">{{this.data?.art8}}</p>
+        <h1 style="padding-bottom:10px; margin-top:-22px; margin-left: 20px; bottom:10px; color: brown; font-size: 15px;margin-bottom: 20px;">
+          Por: Marcelo Lisnovsky</h1>
+
+        </a>
+        <!-- <p class="autor">Por: {{data[4]?.autor}}</p> -->
+        </div>
+
+
+
+  </div>
+
+  </div>
+
+
+
+      </div>
+    </div>
+
+
+
+
+
+
+<!-- SOLO EN DISPOSITIVOS MOBILES -->
+<div class="poner600" style=" background-color: black;">
+  <div class="row" style="margin-top: 10px; ">
+  <div class="col-5">
+    <a  routerLink="/articulo/{{this.data?.resultadoID}}" >
+    <img  class="img" src="{{this.data?.resultadoImagen}}" width="100%" alt="" height="160px">
+    </a>
+  </div>
+
+    <div  class="col-7" style="border-radius: 10px; background-color:#ffa500;padding:0px" (click)="cambioImagen1()">
+      <a routerLink="/articulo/{{this.data?.resultadoID}}">
+      <p class="titulo truncar3" >{{this.data?.art1}}</a>
+
+      <h6 style="padding-left: 12px; margin-top: -4px; font-size: 12px; "  >
+        <svg style="margin-top: -3px; margin-left:-3px" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16">
+          <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3Zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"/>
+        </svg>
+        Alex Guillermo Martín</h6>
+    </div>
+  </div>
+
+
+
+
+  <div class="row  ">
+    <div class="col-5">
+      <a routerLink="/articulo/{{this.data?.resultadoID2}}">
+   <img  class="img" src="{{data?.resultadoImagen2}}" width="100%" alt="" height="160px">
+   </a> 
+   </div>
+
+
+
+      <div  class="col-7" style="border-radius: 10px; background-color:#ffa500;" (click)="cambioImagen2()">
+        <a routerLink="/articulo/{{this.data?.resultadoID2}}">
+        <p class="titulo" style="margin-left:0px">
+
+          {{this.data?.art2}}</p>
+        </a>
+
+        <h6 style=" margin-top: -4px; font-size: 12px;" >
+          <svg style="margin-top: -3px; margin-left:-3px" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16">
+            <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3Zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"/>
+          </svg>
+          Alex Guillermo Martín</h6>
+
+      </div>
+    </div>
+
+    <div class="row ">
+      <div class="col-5">
+        <a routerLink="/articulo/{{this.data?.resultadoID3}}">
+     <img class="img" src="{{data?.resultadoImagen3}}" width="100%" alt=""  height="160px">
+    </a>
+        </div>
+
+
+
+        <div  class="col-7" style="border-radius: 10px; background-color:#ffa500;" (click)="cambioImagen3()">
+          <a routerLink="/articulo/{{this.data?.resultadoID3}}">
+        <p class="titulo"style="margin-left:0px">{{this.data?.art3}}</p>
+</a>
+
+      <h6 style="margin-top: -4px; font-size: 12px;" >
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16">
+          <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3Zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"/>
+        </svg>
+        Corina María Altamirano</h6>
+
+        </div>
+      </div>
+
+      <div style="  width: 100%; background-color:orange; margin-top: 10px; margin-bottom: 10px;border-radius: 10px">
+        <a href="http://www.culturademontania.org.ar/Suscripcion-form/suscripcion.html" target="_blank">
+        <img src="../../../assets/banner Noticias.png"  width="100%" alt="">
+        </a>
+      </div>
+
+    <div class="row ">
+      <div class="col-5" >
+      <a routerLink="/articulo/{{this.data?.resultadoID4}}">
+      <img class="img" src="{{data?.resultadoImagen4}}" width="100%" alt="" height="100%">
+    </a>
+
+        </div>
+
+
+
+        <div  class="col-7" style="overflow: hidden; border-radius: 10px; background-color:#ffa500;" (click)="cambioImagen4()">
+          <a routerLink="/articulo/{{this.data?.resultadoID4}}">
+  <p class="titulo"style="margin-left:0px">{{data?.art4}}</p>
+</a>
+
+      <h6 style="margin-top: -p4x; font-size: 12px;" >
+        <svg style="margin-top:-1px" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16">
+          <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3Zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"/>
+        </svg>
+        Mariana Neme</h6>
+
+        </div>
+      </div>
+
+
+
+
+    <div class="row ">
+      <div class="col-5">
+        <a routerLink="/articulo/{{this.data?.resultadoID5}}">
+     <img class="img" src="{{data?.resultadoImagen5}}" width="100%" height="100%" alt="">
+ </a>
+        </div>
+
+
+
+        <div  class="col-7" style="border-radius: 10px; background-color:#ffa500;" (click)="cambioImagen5()">
+          <a routerLink="/articulo/{{this.data?.resultadoID5}}">
+  <p class="titulo"style="margin-left:0px">{{data?.art5}}</p>
+    </a>
+
+      <h6 style="margin-top: -4px; font-size: 12px;" >
+        <svg  style="margin-top:-5px" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16">
+          <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3Zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"/>
+        </svg>
+        Horacio Beto Fuentes</h6>
+        </div>
+      </div>
+
+      <div class="row ">
+        <div class="col-5">
+          <a routerLink="/articulo/{{this.data?.resultadoID6}}">
+       <img class="img" src="{{data?.resultadoImagen6}}" width="100%" height="100%"alt="">
+      </a>
+          </div>
+
+
+
+          <div  class="col-7" style="border-radius: 10px; background-color:#ffa500;" (click)="cambioImagen6()">
+            <a routerLink="/articulo/{{this.data?.resultadoID6}}">
+    <p class="titulo"style="margin-left:0px">{{data?.art6}}</p>
+    </a>
+
+      <h6 style=" margin-top: -4px; font-size: 12px;" >
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16">
+          <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3Zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"/>
+        </svg>
+        J. Lucas Sbriglio</h6>
+
+          </div>
+        </div>
+
+        <div style="  width: 100%; background-color:orange; margin-top: 10px; margin-bottom: 10px;border-radius: 10px">
+          <a href="http://www.culturademontania.org.ar/Suscripcion-form/inscripcion-entrenamiento.html" target="_blank">
+          <img src="../../../assets/otros.png"  width="100%" alt="">
+        </a>
+
+    </div>
+        <div class="row ">
+          <div class="col-5">
+            <a routerLink="/articulo/{{this.data?.resultadoID7}}">
+         <img class="img" src="{{data?.resultadoImagen7}}" width="100%" height="100%"alt="">
+         </a>
+
+            </div>
+
+
+
+            <div  class="col-7" style="border-radius: 10px; background-color:#ffa500;" (click)="cambioImagen7()">
+              <a routerLink="/articulo/{{this.data?.resultadoID7}}">
+      <p class="titulo"style="margin-left:0px"> {{data?.art7}}</p>
+      </a>
+
+      <h6 style=" margin-top: -10px; font-size: 12px;" >
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16">
+          <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3Zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"/>
+        </svg>
+        J. Lucas Sbriglio</h6>
+
+            </div>
+          </div>
+
+
+          <div class="row ">
+            <div class="col-5" style="margin-bottom: 20px;">
+              <a routerLink="/articulo/{{this.data?.resultadoID8}}">
+           <img class="img" src="{{data?.resultadoImagen8}}" width="100%" height="100%" alt="" >
+                  </a>
+              </div>
+
+
+
+              <div  class="col-7" style="border-radius: 10px; background-color:#ffa500;margin-bottom: 20px;" (click)="cambioImagen8()">
+                <a routerLink="/articulo/{{this.data?.resultadoID8}}">
+               <p class="titulo"style="margin-left:0px">{{data.art8}}</p>
+        </a>
+
+      <h6 style="padding-left: 0px; margin-top: -10px; font-size: 12px;" >
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16">
+          <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3Zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"/>
+        </svg>
+        Marcelo Lisnovsky</h6>
+
+              </div>
+            </div>
+            <div style="  width: 100%; background-color:orange; margin-top: 10px; margin-bottom: 10px;border-radius: 10px">
+              <a href="http://www.culturademontania.org.ar/Suscripcion-form/inscripcion-equipo.html" target="_blank">
+                <img src="../../../assets/formarparte.png" width="100%"   alt=""></a>
+
+
+        </div>
+
+</div>
+
+  </div>

@@ -1,0 +1,59 @@
+<br>
+<br>
+<h1  *ngIf="!this.nota.comentarios"  class="titulo">| COMENTARIOS(0)</h1><hr *ngIf="!this.nota.comentarios">
+<h4  *ngIf="!this.nota.comentarios"  class="titulo" style="font-size: 16px; color:gray">No hay comentarios aún,  sé el primero!</h4><hr *ngIf="!this.nota.comentarios">
+
+<h1  *ngIf="this.nota.comentarios"  class="titulo">| COMENTARIOS({{this.comentarios.length -1}})</h1>
+<hr *ngIf="this.comentarios[1]">
+<h5 *ngIf="this.comentarios[1]" class="comentarios" [innerHTML]=this.comentarios[1]></h5>
+<hr *ngIf="this.comentarios[2]">
+<h5  *ngIf="this.comentarios[2]" class="comentarios" [innerHTML]=this.comentarios[2]></h5>
+<hr *ngIf="this.comentarios[3]">
+<h5 *ngIf="this.comentarios[3]" class="comentarios" [innerHTML]=this.comentarios[3]></h5>
+<hr *ngIf="this.comentarios[3]">
+<!-- <h5 class="comentarios" [innerHTML]=this.comentarios[3]></h5>
+<hr *ngIf="this.comentarios[3]">
+<h5 class="comentarios" [innerHTML]=this.comentarios[4]></h5>
+<hr *ngIf="this.comentarios[4]"> -->
+
+
+<button  (click)="formulario = true; btnComentar = false" class="btn btn-dark mt-2" >
+ 
+      <svg   *ngIf="!this.loading" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chat-right-dots-fill" viewBox="0 0 16 16">
+        <path d="M16 2a2 2 0 0 0-2-2H2a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h9.586a1 1 0 0 1 .707.293l2.853 2.853a.5.5 0 0 0 .854-.353V2zM5 6a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm4 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm3 1a1 1 0 1 1 0-2 1 1 0 0 1 0 2z"/>
+      </svg>
+      <img *ngIf="this.loading" src="../../../assets/loader.gif" width="30px" alt="">
+            Comentar</button>
+
+<div *ngIf="formulario" style="margin-top:20px">
+<h6 class="descripcionInput ">Nombre*</h6>
+<div class="input-group ajusteAncho"     >
+    <input [(ngModel)]="this.nombre"  
+    type="text" class="form-control" placeholder="Nombre" 
+    aria-label="Recipient's username" aria-describedby="basic-addon2">
+ </div>   
+ <h6 class="descripcionInput mt-2">Email*</h6>
+ <div class="input-group ajusteAncho"     >
+  <input [(ngModel)]="this.email"  
+  type="email" class="form-control" placeholder="Email" 
+  aria-label="Recipient's username" aria-describedby="basic-addon2">
+</div>  
+ <br>
+  
+ <h6 class="descripcionInput">Comentarios*</h6>
+<div class="input-group ajusteAncho">
+     <textarea [(ngModel)]="this.comentario"  type="text" class="form-control" 
+      placeholder="Comentarios" 
+      rows="5">  
+     </textarea>   
+</div>
+<!-- <h6 *ngIf=""" style="color:red"> Falta completar nombre y el mensaje</h6> -->
+<div class="mt-2">
+<button (click)=" btnComentar = true; agregarPublicacion()"  class="btn btn-dark mt-2">
+    
+  Enviar</button>
+
+
+<button (click)="formulario=false; btnComentar = true; "  class="btn btn-dark mt-2 " style="margin-left:5px">Cancelar</button>
+</div>
+</div>

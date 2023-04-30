@@ -1,0 +1,584 @@
+
+<style>
+
+
+ </style>
+<div class="cuerpo margenL margenR"> 
+
+    <div class="barraInfo">
+        <!-- <h5 *ngIf="!loading"  class=" suscri2 quitar600" style="font-size:18px;padding:10px"><b> MES OCTUBRE | AÑO 2022</b></h5> -->
+       <div style="text-align: center;">
+            <div *ngIf="loader2" class="loadingio-spinner-dual-ring-xg1vnrf2b6o " style=" margin-top: 150px;min-height: 2000px;"><div class="ldio-z7fu6e1den">
+
+        <div></div><div><div></div></div>
+        </div></div>
+<div  *ngIf="!loader2" style="text-align:left; margin-left:40px">
+    <br>
+  
+  
+      <button *ngIf="!nuevo" class="btn btn-dark"  (click)="table=false; nuevaEdicion(); nuevo=true"  >Crear una nueva Edición</button>  
+      <button *ngIf="!nuevo" style="margin-left:10px" class="btn btn-dark ">Publicidad</button>  
+      
+
+</div>
+<div  *ngIf="!loader2" >
+<br>
+<table   *ngIf="table" class="table table-dark"   >
+    <thead class="thead-dark" style="margin-left:20px; border:none; margin-bottom: 0px;">
+      <tr>
+        <!-- <th scope="col">#</th> -->
+        <th scope="col" style="width:7%; color: orange;">Mes</th>
+        <th scope="col"style="width:7%; color: orange;">Año</th>
+        <th scope="col"style="width:7%; color: orange;">Creación</th>
+        <th scope="col" style="width:7%; color: orange;">Editar</th>
+        
+        
+        
+        <th scope="col" style="width:5%;color: orange;"class="text-center">Borrar</th>
+        <th scope="col" style="width:5%;color: orange;"class="text-center">Vistas</th>
+        <th scope="col" style="width:5%;color: orange;"class="text-center">Abrir</th>
+        
+
+      </tr>
+    </thead>
+    <tbody>
+      
+      <tr *ngFor="let articulo of articulos|filtroRevista:'revista'">
+        <!-- <th scope="row">1</th> -->
+        
+        <td > <span style="color:orange">{{articulo?.titulo}}</span></td> 
+        <td class="textoTableTitulo" >{{articulo?.subtitulo}}</td> 
+        <td> {{articulo?.fecha | date:'dd/MM/yy'}}</td>
+       <td class="text-center">
+        <a >
+          <!-- data-toggle="modal" data-target="#exampleModal" (click)='editarArticulo(articulo)' (click)="this.crudService.cambioPantalla=true" -->
+       <mat-icon style="cursor:pointer"  (click)="cargarEdit(articulo?._id)">edit</mat-icon> 
+      </a></td>
+
+
+      
+          <td class="text-center">                        
+            <a data-bs-toggle="modal" data-bs-target="#staticBackdrop2">
+              <div *ngIf="loader">
+               <mat-icon style="cursor:pointer; color:red" (click)="this.id = this.articulo?._id">delete</mat-icon>
+              </div>
+              <div *ngIf="!loader">
+                <img src="../../../assets/loader.gif" alt="" width="30px"> 
+              </div>
+
+              </a>
+              
+              <td class="text-center">{{this.vistas}}</td>  
+              <td>
+              <a  routerLink="../edicion/{{this.articulo._id}}" target="_blank">
+  
+                <button class="btn btn-dark ml-2" > 
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-easel2-fill" viewBox="0 0 16 16">
+                    <path d="M8.447.276a.5.5 0 0 0-.894 0L7.19 1H2.5A1.5 1.5 0 0 0 1 2.5V10h14V2.5A1.5 1.5 0 0 0 13.5 1H8.809L8.447.276Z"/>
+                    <path fill-rule="evenodd" d="M.5 11a.5.5 0 0 0 0 1h2.86l-.845 3.379a.5.5 0 0 0 .97.242L3.89 14h8.22l.405 1.621a.5.5 0 0 0 .97-.242L12.64 12h2.86a.5.5 0 0 0 0-1H.5Zm3.64 2 .25-1h7.22l.25 1H4.14Z"/>
+                  </svg>
+                  Vista previa </button>
+              
+              </a>
+            </td>
+      </tr>
+      
+    </tbody>
+  </table>
+</div>
+
+
+<div *ngIf="nuevo">
+ 
+ <br><br> 
+
+<div class="row" style="margin-top:-10px">
+    <div class="col-6">      
+      <div style=" max-width:100%;" >
+        <div style="margin-left:40px; min-height: 91px;"> 
+          <h1 class="titulo">Crear | PUBLICACIÓN</h1>
+          <hr>
+         <h6 style ="text-align: left;margin-bottom: 10px; margin-top: 0px;">IMAGEN DE PORTADA 1200X600</h6>
+          <div class="input-group"  >
+              <input class="form-control" type="file" id="formFile"  type="file"  style="  overflow: none"  (change)="onFileChange($event); " width="100%">
+              <div class="input-group-append">
+      
+      
+          <button class="btn btn-danger btn-upload" (click)="this.loadingSubir=false" (click)="onUpload()" style="margin-top:0px" [disabled]=this.SubirEstado>
+          
+             <img *ngIf="!loadingSubir" src="../../../assets/loader.gif" alt="" width="20px">  
+      
+            <svg *ngIf="loadingSubir" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-cloud-arrow-up-fill" viewBox="0 0 16 16">
+              <path d="M8 2a5.53 5.53 0 0 0-3.594 1.342c-.766.66-1.321 1.52-1.464 2.383C1.266 6.095 0 7.555 0 9.318 0 11.366 1.708 13 3.781 13h8.906C14.502 13 16 11.57 16 9.773c0-1.636-1.242-2.969-2.834-3.194C12.923 3.999 10.69 2 8 2zm2.354 5.146a.5.5 0 0 1-.708.708L8.5 6.707V10.5a.5.5 0 0 1-1 0V6.707L6.354 7.854a.5.5 0 1 1-.708-.708l2-2a.5.5 0 0 1 .708 0l2 2z"/>
+            </svg>
+      
+      
+            Subir</button>
+      
+      
+      
+        </div>
+      
+      </div>
+          
+        </div>
+         <div *ngIf="this.loading2" > 
+                 <div style="text-align: left;"> 
+                    <img src="../../../assets/loading4.gif"  width="50px" alt="" style="margin-top:-41px; margin-left:40px">
+                    
+                </div>
+             </div> 
+         
+         <div *ngIf="this.loading3">
+          <h6 style="  margin-left: -351px;    margin-top: -26px;color:green; font-size: 15px;">✓ Subida! </h6>
+            </div>
+       </div>
+
+    <div class="row" style="text-align:left; margin-left:30px">
+
+
+      
+<div class="col-6" >
+
+
+        <h6>MES</h6>
+        <div class="input-group mb-3">
+          <select class="form-select" id="inputGroupSelect01" [(ngModel)]="this.titulo"  name="titulo" id="">
+            <option selected value="Enero">ENERO</option>
+            <option value="Febrero">FEBRERO</option>
+            <option value="Marzo">MARZO</option>
+            <option value="Abril">ABRIL</option>
+            <option value="Mayo">MAYO</option>
+            <option value="Junio">JUNIO</option>
+            <option value="Julio">JULIO</option>
+            <option value="Agosto">AGOSTO</option>
+            <option value="Septiembre">SEPTIEMBRE</option>
+            <option value="Octubre">OCTUBRE</option>
+            <option value="Noviembre">NOVIEMBRE</option>
+            <option value="Diciembre">DICIEMBRE</option>
+          </select>
+        </div>
+</div>
+<div class="col-6"  >
+        <h6>AÑO</h6>
+        <div class="input-group mb-3">
+          <select class="form-select" id="inputGroupSelect01" [(ngModel)]="this.subtitulo"  name="subtitulo" id=""  >
+            <option selected value="2022">2022</option>
+            <option value="2023">2023</option>
+            <option value="2024">2024</option>
+            <option value="2025">2025</option>
+            <option value="2026">2026</option>
+            <option value="2027">2027</option>
+            <option value="2028">2028</option>
+            <option value="2029">2029</option>
+            <option value="2030">2030</option>
+            <option value="2031">2031</option>
+            <option value="2032">2032</option>
+            <option value="2033">2033</option>
+            <option value="2034">2034</option>
+            <option value="2035">2035</option>
+
+         </select>
+
+</div>
+
+
+
+
+<br>
+</div>
+
+<div class="col-12">
+<h6>Titulo</h6>    
+<input [(ngModel)]="imagen2"  type="text" class="form-control" placeholder="" aria-label="Recipient's username" aria-describedby="basic-addon2">
+<h6>Subtitulo</h6>  
+<input [(ngModel)]="imagen3"  type="text" class="form-control" placeholder="" aria-label="Recipient's username" aria-describedby="basic-addon2">
+<h6 style="margin-top:20px">Editorial</h6>
+      
+<ckeditor [editor]="Editor" [(ngModel)]="this.autor"></ckeditor>
+</div>
+
+    </div>
+   </div>  
+<div class="col-6  " >
+  <div style="margin-left:20px; margin-right:20px">
+  
+  <div style="text-align:left; margin-top: -63px; ">
+       
+    <h1 class="titulo">Agregar | ARTÍCULOS</h1>
+    <hr>
+    
+
+
+              <h6>#1</h6>        
+              <div class="input-group"  >
+      <input [(ngModel)]="this.resultadoTitulo"  type="text" class="form-control" placeholder="" aria-label="Recipient's username" aria-describedby="basic-addon2" disabled = {{this.inputActivo}} >
+      <div class="input-group-append">
+        
+
+        <button 
+        class="btn btn-dark" 
+        type="button" 
+        (click)="reset()" 
+        style="margin-left: 10px" 
+        data-bs-toggle="tooltip" data-bs-html="true" title="Borrar">          
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-square-fill" viewBox="0 0 16 16">
+            <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm3.354 4.646L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 1 1 .708-.708z"/>
+          </svg>
+          </button>
+
+          <button (click)='editar()'class="btn btn-dark " type="button"  style="margin-left: 5px"
+          data-bs-toggle="tooltip" data-bs-html="true" title="Editar Titulo">
+          
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
+              <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
+              <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"/>
+            </svg>               
+            </button>
+
+
+            <button (click)="seleccionado(1)" class="btn btn-dark " 
+            data-bs-toggle="tooltip" data-bs-html="true" title="Buscar"
+            type="button" data-bs-toggle="modal" data-bs-target="#staticBackdrop" style="margin-left: 5px">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+              </svg>            
+              </button>
+
+      </div>
+              </div>
+              <h6>#2</h6>   
+              <div class="input-group"  >
+                <input [(ngModel)]="resultadoTitulo2"  type="text" class="form-control" placeholder="" aria-label="Recipient's username" aria-describedby="basic-addon2" disabled = {{this.inputActivo2}}>
+                <div class="input-group-append">
+                  <button 
+                  class="btn btn-dark" 
+                  type="button" 
+                  (click)="reset2()" 
+                  style="margin-left: 10px" 
+                  data-bs-toggle="tooltip" data-bs-html="true" title="Borrar">          
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-square-fill" viewBox="0 0 16 16">
+                      <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm3.354 4.646L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 1 1 .708-.708z"/>
+                    </svg>
+                    </button>
+    
+                    <button (click)='editar2()'class="btn btn-dark " type="button"  style="margin-left: 5px"
+                    data-bs-toggle="tooltip" data-bs-html="true" title="Editar Titulo">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
+                        <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
+                        <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"/>
+                      </svg>               
+                      </button>
+    
+    
+                      <button (click)="seleccionado(2)" class="btn btn-dark " 
+                      data-bs-toggle="tooltip" data-bs-html="true" title="Buscar"
+                      type="button" data-bs-toggle="modal" data-bs-target="#staticBackdrop" style="margin-left: 5px">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                          <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+                        </svg>            
+                        </button>
+                </div>
+                        </div>
+                        <h6>#3</h6>   
+                        <div class="input-group"  >
+                          <input [(ngModel)]="resultadoTitulo3"  type="text" class="form-control" placeholder="" aria-label="Recipient's username" aria-describedby="basic-addon2" disabled={{this.inputActivo3}}>
+                          <div class="input-group-append">
+                            <button 
+                            class="btn btn-dark" 
+                            type="button" 
+                            (click)="reset3()" 
+                            style="margin-left: 10px" 
+                            data-bs-toggle="tooltip" data-bs-html="true" title="Borrar">          
+                              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-square-fill" viewBox="0 0 16 16">
+                                <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm3.354 4.646L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 1 1 .708-.708z"/>
+                              </svg>
+                              </button>
+              
+                              <button (click)='editar3()'class="btn btn-dark " type="button"  style="margin-left: 5px"
+                              data-bs-toggle="tooltip" data-bs-html="true" title="Editar Titulo">
+                                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
+                                  <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
+                                  <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"/>
+                                </svg>               
+                                </button>
+              
+              
+                                <button (click)="seleccionado(3)" class="btn btn-dark " 
+                                data-bs-toggle="tooltip" data-bs-html="true" title="Buscar"
+                                type="button" data-bs-toggle="modal" data-bs-target="#staticBackdrop" style="margin-left: 5px">
+                                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                                    <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+                                  </svg>            
+                                  </button>
+                          </div>
+                                  </div>
+                                  <h6>#4</h6>   
+                                  <div class="input-group"  >
+                                    <input [(ngModel)]="resultadoTitulo4"  type="text" class="form-control" placeholder="" aria-label="Recipient's username" aria-describedby="basic-addon2" disabled = {{this.inputActivo4}}>
+                                    <div class="input-group-append">
+                                      <button 
+                                      class="btn btn-dark" 
+                                      type="button" 
+                                      (click)="reset4()" 
+                                      style="margin-left: 10px" 
+                                      data-bs-toggle="tooltip" data-bs-html="true" title="Borrar">          
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-square-fill" viewBox="0 0 16 16">
+                                          <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm3.354 4.646L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 1 1 .708-.708z"/>
+                                        </svg>
+                                        </button>
+                        
+                                        <button (click)='editar4()'class="btn btn-dark " type="button"  style="margin-left: 5px"
+                                        data-bs-toggle="tooltip" data-bs-html="true" title="Editar Titulo">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
+                                            <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
+                                            <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"/>
+                                          </svg>               
+                                          </button>
+                        
+                        
+                                          <button (click)="seleccionado(4)" class="btn btn-dark " 
+                                          data-bs-toggle="tooltip" data-bs-html="true" title="Buscar"
+                                          type="button" data-bs-toggle="modal" data-bs-target="#staticBackdrop" style="margin-left: 5px">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                                              <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+                                            </svg>            
+                                            </button>
+                                    </div>
+                                            </div>
+    
+                                            <h6>#5</h6>   
+                                            <div class="input-group"  >
+                                              <input [(ngModel)]="resultadoTitulo5"  type="text" class="form-control" placeholder="" aria-label="Recipient's username" aria-describedby="basic-addon2" disabled = {{this.inputActivo5}}>
+                                              <div class="input-group-append">
+                                                <button 
+                                                class="btn btn-dark" 
+                                                type="button" 
+                                                (click)="reset5()" 
+                                                style="margin-left: 10px" 
+                                                data-bs-toggle="tooltip" data-bs-html="true" title="Borrar">          
+                                                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-square-fill" viewBox="0 0 16 16">
+                                                    <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm3.354 4.646L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 1 1 .708-.708z"/>
+                                                  </svg>
+                                                  </button>
+                                  
+                                                  <button (click)='editar5()'class="btn btn-dark " type="button"  style="margin-left: 5px"
+                                                  data-bs-toggle="tooltip" data-bs-html="true" title="Editar Titulo">
+                                                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
+                                                      <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
+                                                      <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"/>
+                                                    </svg>               
+                                                    </button>
+                                  
+                                  
+                                                    <button (click)="seleccionado(5)" class="btn btn-dark " 
+                                                    data-bs-toggle="tooltip" data-bs-html="true" title="Buscar"
+                                                    type="button" data-bs-toggle="modal" data-bs-target="#staticBackdrop" style="margin-left: 5px">
+                                                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                                                        <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+                                                      </svg>            
+                                                      </button>
+                                              </div>
+                                                      </div>
+
+
+                                                      <h6>#6</h6>   
+                                                      <div class="input-group"  >
+                                                        <input [(ngModel)]="resultadoTitulo6"  type="text" class="form-control" placeholder="" aria-label="Recipient's username" aria-describedby="basic-addon2" disabled = {{this.inputActivo6}}>
+                                                        <div class="input-group-append">
+                                                          <button 
+                                                          class="btn btn-dark" 
+                                                          type="button" 
+                                                          (click)="reset6()" 
+                                                          style="margin-left: 10px" 
+                                                          data-bs-toggle="tooltip" data-bs-html="true" title="Borrar">          
+                                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-square-fill" viewBox="0 0 16 16">
+                                                              <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm3.354 4.646L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 1 1 .708-.708z"/>
+                                                            </svg>
+                                                            </button>
+                                            
+                                                            <button (click)='editar6()'class="btn btn-dark " type="button"  style="margin-left: 5px"
+                                                            data-bs-toggle="tooltip" data-bs-html="true" title="Editar Titulo">
+                                                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
+                                                                <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
+                                                                <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"/>
+                                                              </svg>               
+                                                              </button>
+                                            
+                                            
+                                                              <button (click)="seleccionado(6)" class="btn btn-dark " 
+                                                              data-bs-toggle="tooltip" data-bs-html="true" title="Buscar"
+                                                              type="button" data-bs-toggle="modal" data-bs-target="#staticBackdrop" style="margin-left: 5px">
+                                                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                                                                  <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+                                                                </svg>            
+                                                                </button>
+                                                        </div>
+                                                                </div>
+
+
+                                                                <h6>#7</h6>   
+                                                                <div class="input-group"  >
+                                                                  <input [(ngModel)]="resultadoTitulo7"  type="text" class="form-control" placeholder="" aria-label="Recipient's username" aria-describedby="basic-addon2" disabled = {{this.inputActivo7}}>
+                                                                  <div class="input-group-append">
+                                                                    <button 
+                                                                    class="btn btn-dark" 
+                                                                    type="button" 
+                                                                    (click)="reset7()" 
+                                                                    style="margin-left: 10px" 
+                                                                    data-bs-toggle="tooltip" data-bs-html="true" title="Borrar">          
+                                                                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-square-fill" viewBox="0 0 16 16">
+                                                                        <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm3.354 4.646L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 1 1 .708-.708z"/>
+                                                                      </svg>
+                                                                      </button>
+                                                      
+                                                                      <button (click)='editar7()'class="btn btn-dark " type="button"  style="margin-left: 5px"
+                                                                      data-bs-toggle="tooltip" data-bs-html="true" title="Editar Titulo">
+                                                                          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
+                                                                          <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
+                                                                          <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"/>
+                                                                        </svg>               
+                                                                        </button>
+                                                      
+                                                      
+                                                                        <button (click)="seleccionado(7)" class="btn btn-dark " 
+                                                                        data-bs-toggle="tooltip" data-bs-html="true" title="Buscar"
+                                                                        type="button" data-bs-toggle="modal" data-bs-target="#staticBackdrop" style="margin-left: 5px">
+                                                                          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                                                                            <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+                                                                          </svg>            
+                                                                          </button>
+                                                                  </div>
+                                                                          </div>
+
+
+                                                                          
+                                                                <h6>#8</h6>   
+                                                                <div class="input-group"  >
+                                                                  <input [(ngModel)]="resultadoTitulo8"  type="text" class="form-control" placeholder="" aria-label="Recipient's username" aria-describedby="basic-addon2" disabled = {{this.inputActivo8}}>
+                                                                  <div class="input-group-append">
+                                                                    <button 
+                                                                    class="btn btn-dark" 
+                                                                    type="button" 
+                                                                    (click)="reset8()" 
+                                                                    style="margin-left: 10px" 
+                                                                    data-bs-toggle="tooltip" data-bs-html="true" title="Borrar">          
+                                                                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-square-fill" viewBox="0 0 16 16">
+                                                                        <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm3.354 4.646L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 1 1 .708-.708z"/>
+                                                                      </svg>
+                                                                      </button>
+                                                      
+                                                                      <button (click)='editar8()'class="btn btn-dark " type="button"  style="margin-left: 5px"
+                                                                      data-bs-toggle="tooltip" data-bs-html="true" title="Editar Titulo">
+                                                                          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
+                                                                          <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
+                                                                          <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"/>
+                                                                        </svg>               
+                                                                        </button>
+                                                      
+                                                      
+                                                                        <button (click)="seleccionado(8)" class="btn btn-dark " 
+                                                                        data-bs-toggle="tooltip" data-bs-html="true" title="Buscar"
+                                                                        type="button" data-bs-toggle="modal" data-bs-target="#staticBackdrop" style="margin-left: 5px">
+                                                                          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                                                                            <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+                                                                          </svg>            
+                                                                          </button>
+                                                                  </div>
+                                                                          </div>
+                        
+                        
+              
+
+
+</div>
+<br> 
+
+
+ 
+
+</div>
+
+</div>
+
+
+</div>
+<div style="text-align: left; margin-top:0px">
+  <hr style="margin-left: 30px; margin-right: 30px;" >
+  <button class="btn btn-dark " (click)=" agregarPublicacion()" [disabled]=this.loadingGuardar style="margin-right: 10px; margin-left:40px">
+    Guardar    
+    <svg *ngIf="!loadingGuardar"  xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-record-btn-fill" viewBox="0 0 16 16">
+      <path d="M0 12V4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm8-1a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
+    </svg>
+    <img *ngIf="loadingGuardar" src="../../../assets/loader.gif" width="20px" alt="" > 
+    </button>
+  
+
+  
+  <a (click)="reload()">
+  
+    <button class="btn btn-dark" style="margin-left:10px" > Volver
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-backspace-fill" viewBox="0 0 16 16">
+        <path d="M15.683 3a2 2 0 0 0-2-2h-7.08a2 2 0 0 0-1.519.698L.241 7.35a1 1 0 0 0 0 1.302l4.843 5.65A2 2 0 0 0 6.603 15h7.08a2 2 0 0 0 2-2V3zM5.829 5.854a.5.5 0 1 1 .707-.708l2.147 2.147 2.146-2.147a.5.5 0 1 1 .707.708L9.39 8l2.146 2.146a.5.5 0 0 1-.707.708L8.683 8.707l-2.147 2.147a.5.5 0 0 1-.707-.708L7.976 8 5.829 5.854z"/>
+      </svg>
+       </button>
+  
+  </a>
+  
+  <br><br><br>
+  </div>
+</div>      
+
+</div>
+    
+
+<!-- modal -->
+
+<!-- Button trigger modal -->
+ 
+<!-- Modal -->
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="staticBackdropLabel">Ingrese numero de ID</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="input-group" >
+          <input  [(ngModel)]="this.busqueda" id="busqueda" type="text" class="form-control" placeholder="Número de ID del articulo" aria-label="Recipient's username" aria-describedby="basic-addon2">
+          <div class="input-group-append">
+            <button class="btn btn-danger" type="button" (click)="pedirUnArticulo()" data-bs-dismiss="modal" >Buscar</button>
+          </div>
+         </div>
+      </div>
+      <div class="modal-footer">
+        
+        <!-- <button type="button" class="btn btn-primary">Understood</button> -->
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="staticBackdrop2" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">  <div class="modal-dialog modal-dialog-centered">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h5 class="modal-title" id="staticBackdropLabel">Eliminar</h5>
+      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+    </div>
+  
+<div class="modal-body">
+<h4>Esta seguro que desea eliminar el artículo?</h4>
+</div>
+<div class="modal-footer">
+  <button type="button" class="btn btn-dark" data-bs-dismiss="modal">Cancelar</button>
+  <button type="button" class="btn btn-danger" (click)="eliminarArticulo(this.id)" (click)="activo = !activo" data-bs-dismiss="modal">Eliminar</button>
+</div>
+
+
+  </div>
+</div>
+  
+
+</div>

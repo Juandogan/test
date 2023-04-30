@@ -1,0 +1,258 @@
+
+ .poner600{display:none}
+ 
+ .flex-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: normal;
+  align-items: normal;
+  align-content: normal;
+}
+
+.edicionesAnteriores{
+  margin-left: -10px;margin-right: -10px; padding-left:15px; 
+           margin-top:20px;
+           
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 700;
+    line-height: 25px;
+    letter-spacing: -1px;
+    margin-top: -10px;
+    margin-bottom: -12px;
+    margin-left: 0px;
+    color: orange;
+    font-size: 25px;
+           
+}
+.flex-items:nth-child(1) {
+  display: block;
+  flex-grow: 0;
+  flex-shrink: 1;
+  flex-basis: auto;
+  align-self: auto;
+  order: 0;
+}
+
+.flex-items:nth-child(2) {
+  display: block;
+  flex-grow: 0;
+  flex-shrink: 1;
+  flex-basis: auto;
+  align-self: auto;
+  order: 0;
+}
+
+.flex-items:nth-child(3) {
+  display: block;
+  flex-grow: 0;
+  flex-shrink: 1;
+  flex-basis: auto;
+  align-self: auto;
+  order: 0;
+}
+
+.flex-items:nth-child(4) {
+  display: block;
+  flex-grow: 0;
+  flex-shrink: 1;
+  flex-basis: auto;
+  align-self: auto;
+  order: 0;
+}
+
+.cuadroTotal{
+  border-left: 20px solid rgb(51, 51, 51);border-right: 20px solid rgb(51, 51, 51);
+}
+
+nota{font-size:16px}
+.categoria{ 
+    color:rgb(243, 178, 0);
+    font-weight: 600;
+    font-size: 14px;
+    margin-top: 30px;
+    text-transform: uppercase; 
+    }
+
+   .poner600{display:none}
+    
+.titulo{font-size:35px; 
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: 700;
+  line-height: 42px; 
+  letter-spacing: -1px;
+  margin-top:0px;
+  color:rgb(68, 68, 68);
+  margin-bottom: 10px;
+  
+}
+
+ .capital::first-letter {
+
+  float: right;
+  font-family: 'Source Serif Pro', serif;
+  font-size: 60px;
+  float: left;
+  margin-top: 13px;
+  margin-bottom: 0px;
+  margin-right: 10px;
+  line-height: 30px;
+  color:orange;
+
+}
+.mar{margin-left:10px; margin-right:10px}
+.subtitulo{
+   font-family: Georgia, 'Times New Roman', Times, serif; 
+  font-weight: 600;
+  margin-top:0px;
+  font-size: 20px; 
+  line-height: 30px;
+  color:rgb(68, 68, 68);
+    }
+
+  .borde{border-right: 20px solid rgba(160, 160, 160, 0) ;}
+
+.colorFondo{background-color:rgb(255, 255, 255); }
+
+.sticky{position: sticky; top:0}
+
+
+.image-style-side{
+  float:right;
+   padding:10px; 
+  }
+.hrMargen{ opacity: 0.3;}
+    
+.clasePrincipal{
+     
+    justify-content: left;
+    margin-left:0px; 
+    margin-top:-0px; 
+  }
+
+.primerIcon{
+  display:flex; 
+  align-items: flex-start; 
+  margin-top:-5px; 
+  margin-left:-10px; 
+  margin-right: 5px
+}
+.poner600{display:none}
+.logoCCAMFooter{
+  width: 125px; margin-top: 268px;  margin-left: 125px; margin-right: 0px;
+}
+
+@media (max-width:600px)
+{
+  .edicionesAnteriores{ 
+    margin-bottom: -3px;
+    margin-left: -11px;
+  }
+
+}
+
+
+
+
+@media (max-width:520px)
+{
+.logoCCAMFooter{width: 100px; margin-top:19px;
+margin-left:10px;
+}
+
+  .quitar2{display:none}}
+ 
+@media (max-width:520px)
+{
+  .quitar{display:none}
+}
+@media (max-width:800px)
+{
+
+  .mar{margin-left:0px; margin-right:0px}
+.quitar600{display:none}
+  .poner600{display:block}
+
+.subtitulo{
+ 
+ font-size: 18px; 
+ line-height: 25px;
+ 
+   }
+
+  .titulo{font-size:30px; 
+        line-height: 35px; 
+    
+  }
+.categoria{ 
+ 
+  font-size: 12px;
+ 
+  }
+  .cuadroTotal{
+    border-left: 10px solid rgb(51, 51, 51);border-right: 10px solid rgb(51, 51, 51);
+  }
+  .margenMobile{
+   margin-right: 0px;
+    border:none;
+    padding-right: 0px;
+    margin-left:2px;
+    margin-top:-30px;
+}
+
+}
+
+
+.margenL{ margin-left: 33%; }
+.margenR{margin-right: 33%; } 
+
+
+
+
+
+
+@media (max-width:2666px)
+{.margenL{ margin-left: 25%; }
+.margenR{margin-right: 25%; } 
+}
+
+@media (max-width:2402px)
+{.margenL{ margin-left: 24%; }
+.margenR{margin-right: 24%; } 
+}
+
+@media (max-width:2200px)
+{.margenL{ margin-left: 20%; }
+.margenR{margin-right: 20%; } 
+}
+
+@media (max-width:2000px)
+{.margenL{ margin-left: 18%; }
+.margenR{margin-right: 18%; } 
+}
+
+@media (max-width:1800px)
+{.margenL{ margin-left: 15%; }
+.margenR{margin-right: 15%; } 
+}
+
+@media (max-width:1600px)
+{.margenL{ margin-left: 13%; }
+.margenR{margin-right: 13%; } 
+}
+
+@media (max-width:1400px)
+{.margenL{ margin-left: 8%; }
+.margenR{margin-right: 8%; } 
+}
+
+@media (max-width:1200px)
+{.margenL{ margin-left: 4%; }
+.margenR{margin-right: 4%; } 
+}
+
+
+@media (max-width:1000px)
+{.margenL{ margin-left: 0%; }
+.margenR{margin-right: 0%; } 
+}

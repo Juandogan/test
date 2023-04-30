@@ -1,0 +1,29 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; margin:0px; padding:0px; }
+body { margin: 0px;padding:0px; }
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+ 
+.ck .ck-editor__main .ck-editor__editable:not(.ck-focused) {
+    border-color: var(--ck-color-base-border);
+    height: 183px;   
+}
+   
+.blue-snackbar{background-color:rgb(185, 14, 14) ; color:rgb(255, 255, 255);  top:50px }
+.mat-snack-bar-container {
+    text-align: center;
+    margin:0px ;  
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    position:fixed;
+    top:40%;
+    left:40%;
+    /* transform: translate(-50%,-50%); */
+    z-index:10000000000000
+}
+
+
+.mat-simple-snackbar {
+    display: inline-block !important;
+}

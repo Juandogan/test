@@ -1,0 +1,175 @@
+ 
+    <br>
+    <hr>
+    <br>
+    <h1  *ngIf="this.nota.art1"  class="titulo" style="margin-left:0px;margin-bottom: 10px; color:brown">| ARTÍCULOS </h1>
+    <h1  *ngIf="this.nota.art1"  class="titulo" style="margin-left:0px;margin-bottom: 10px; color:brown">| RELACIONADOS</h1>
+    <br>
+     
+
+    <div class="row" >
+
+      <div  *ngIf="this.nota.art1"      class="card col-12" style="    background-color: rgb(239, 239, 239);">
+        <a routerLink="../../articulo/{{this.nota.resultadoID}}"  target="_blank">
+          <img class="card-img-top sombra"src="{{this.nota.resultadoImagen}}" alt="" height="200px" style="object-fit: cover;">
+          </a>
+         <div class="card-body">        
+            <h6 class="categoria"><b>{{nota?.resultadoCategoria}}</b></h6>
+            <a routerLink="../../articulo/{{this.nota.resultadoID}}"  target="_blank">
+            <h1 class="card-title titulo" >{{nota?.art1}}</h1> 
+          </a>
+            <!-- <p class="card-text" style="margin-top:-10px">{{not?.subtitulo}}</p>           -->
+          
+          </div>     
+      </div>  
+
+      <div  *ngIf="this.nota.art2"   class="card col-12" style="background-color: rgb(239, 239, 239);">
+        <a routerLink="../../articulo/{{this.nota.resultadoID2}}"  target="_blank">
+          <img class="card-img-top sombra"src="{{nota.resultadoImagen2}}" alt="" height="200px" style="object-fit: cover;">
+          </a>
+          <div class="card-body">
+              <h6 class="categoria"><b>{{nota?.resultadoCategoria2}}</b></h6>
+              <a routerLink="../../articulo/{{this.nota.resultadoID2}}"  target="_blank">
+            <h1 class="card-title titulo" >{{nota?.art2}}</h1> 
+          </a>
+          </div>     
+      </div>  
+
+      <div *ngIf="this.nota.art3"  class="card col-12" style="background-color: rgb(239, 239, 239);">
+        <a routerLink="../../articulo/{{this.nota.resultadoID3}}"  target="_blank">
+          <img class="card-img-top sombra"src="{{nota.resultadoImagen3}}" alt="" height="200px" style="object-fit: cover;">
+        </a>
+          <div class="card-body">
+               <h6 class="categoria"><b>{{nota?.resultadoCategoria3}}</b></h6>
+               <a routerLink="../../articulo/{{this.nota.resultadoID3}}"  target="_blank">
+            <h1 class="card-title titulo" >{{nota?.art3}}</h1> 
+            </a>
+            <!-- <p class="card-text" style="margin-top:-10px">{{not?.subtitulo}}</p>           -->
+          
+          </div>     
+      </div>  
+      <div class="card col-12" *ngIf="this.nota?.art4" style="    background-color: rgb(239, 239, 239);">
+        <a routerLink="../../articulo/{{this.nota.resultadoID4}}"  target="_blank">
+          <img class="card-img-top sombra"src="{{nota?.resultadoImagen4}}" alt="" height="200px" style="object-fit: cover;">
+        </a>
+          <div class="card-body">
+               <h6 class="categoria"><b>{{nota?.resultadoCategoria4}}</b></h6>
+               <a routerLink="../../articulo/{{nota?.resultadoID4}}"  target="_blank" >
+            <h1 class="card-title titulo" >{{nota?.art4}}</h1> 
+                </a>
+            <!-- <p class="card-text" style="margin-top:-10px">{{not?.subtitulo}}</p>           -->
+          
+          </div>     
+      </div>  
+      <div *ngIf="this.nota?.art5"  class="card col-12"  style="background-color: rgb(239, 239, 239);" >
+        <a routerLink="../../articulo/{{this.nota.resultadoID5}}"  target="_blank">
+          <img class="card-img-top sombra"src="{{nota?.resultadoImagen5}}" alt="" height="200px" style="object-fit: cover;">
+        </a>
+          <div class="card-body">
+               <h6 class="categoria"><b>{{nota?.resultadoCategoria5}}</b></h6>
+               <a routerLink="../../articulo/{{this.nota.resultadoID5}}"  target="_blank">
+            <h1 class="card-title titulo" >{{nota?.art5}}</h1> 
+          </a>
+            <!-- <p class="card-text" style="margin-top:-10px">{{not?.subtitulo}}</p>           -->
+          
+          </div>     
+      </div>  
+      <div class="card col-12" *ngIf="this.nota?.art6"style="    background-color: rgb(239, 239, 239);" >
+        <a routerLink="../../articulo/{{this.nota.resultadoID6}}"  target="_blank">
+          <img class="card-img-top sombra"src="{{nota?.resultadoImagen6}}" alt="" height="200px" style="object-fit: cover;">
+        </a>
+          <div class="card-body">
+               <h6 class="categoria"><b>{{nota?.resultadoCategoria6}}</b></h6>
+               <a routerLink="../../articulo/{{nota?.resultadoID6}}" fragment="ayudaDiv" target="_blank">
+            <h1 class="card-title titulo" >{{nota?.art6}}</h1> 
+          </a>
+            <!-- <p class="card-text" style="margin-top:-10px">{{not?.subtitulo}}</p>           -->
+          
+          </div>     
+      </div>  
+       
+      <div *ngIf="this.nota.art7" class="card col-12" style="    background-color: rgb(239, 239, 239);" >
+        <a routerLink="../../articulo/{{this.nota.resultadoID7}}"  target="_blank">
+          <img class="card-img-top sombra"src="{{nota?.resultadoImagen7}}" alt="" height="200px" style="object-fit: cover;">
+        </a>
+          <div class="card-body">
+               <h6 class="categoria"><b>{{nota?.resultadoCategoria7}}</b></h6>
+               <a routerLink="../../articulo/{{nota?.resultadoID7}}" fragment="ayudaDiv" target="_blank">
+            <h1 class="card-title titulo" >{{nota?.art7}}</h1> 
+          </a>
+            <!-- <p class="card-text" style="margin-top:-10px">{{not?.subtitulo}}</p>           -->
+          
+          </div>     
+      </div>  
+       
+      <div *ngIf="this.nota.art8" class="card col-12" style="    background-color: rgb(239, 239, 239);" >
+        <a routerLink="../../articulo/{{this.nota.resultadoID8}}"  target="_blank">
+          <img class="card-img-top sombra"src="{{nota?.resultadoImagen8}}" alt="" height="200px" style="object-fit: cover;">
+        </a>
+          <div class="card-body">
+               <h6 class="categoria"><b>{{nota?.resultadoCategoria8}}</b></h6>
+               <a routerLink="../../articulo/{{nota?.resultadoID8}}" fragment="ayudaDiv" target="_blank">
+            <h1 class="card-title titulo" >{{nota?.art8}}</h1> 
+          </a>
+            <!-- <p class="card-text" style="margin-top:-10px">{{not?.subtitulo}}</p>           -->
+          
+          </div>     
+      </div>  
+      <div *ngIf="this.nota.art9" class="card col-12" style="    background-color: rgb(239, 239, 239);" >
+        <a routerLink="../../articulo/{{this.nota.resultadoID9}}"  target="_blank">
+          <img class="card-img-top sombra"src="{{nota?.resultadoImagen9}}" alt="" height="200px" style="object-fit: cover;">
+        </a>
+          <div class="card-body">
+               <h6 class="categoria"><b>{{nota?.resultadoCategoria9}}</b></h6>
+               <a routerLink="../../articulo/{{nota?.resultadoID9}}" fragment="ayudaDiv" target="_blank">
+            <h1 class="card-title titulo" >{{nota?.art9}}</h1> 
+          </a>
+            <!-- <p class="card-text" style="margin-top:-10px">{{not?.subtitulo}}</p>           -->
+          
+          </div>     
+      </div>  
+
+      <div *ngIf="this.nota.art10" class="card col-12" style="    background-color: rgb(239, 239, 239);" >
+        <a routerLink="../../articulo/{{this.nota.resultadoID10}}"  target="_blank">
+          <img class="card-img-top sombra"src="{{nota?.resultadoImagen10}}" alt="" height="200px" style="object-fit: cover;">
+        </a>
+          <div class="card-body">
+               <h6 class="categoria"><b>{{nota?.resultadoCategoria10}}</b></h6>
+               <a routerLink="../../articulo/{{nota?.resultadoID10}}" fragment="ayudaDiv" target="_blank">
+            <h1 class="card-title titulo" >{{nota?.art10}}</h1> 
+          </a>
+            <!-- <p class="card-text" style="margin-top:-10px">{{not?.subtitulo}}</p>           -->
+          
+          </div>     
+      </div>  
+
+      <div *ngIf="this.nota.art11" class="card col-12" style="    background-color: rgb(239, 239, 239);" >
+        <a routerLink="../../articulo/{{this.nota.resultadoID11}}"  target="_blank">
+          <img class="card-img-top sombra"src="{{nota?.resultadoImagen11}}" alt="" height="200px" style="object-fit: cover;">
+        </a>
+          <div class="card-body">
+               <h6 class="categoria"><b>{{nota?.resultadoCategoria11}}</b></h6>
+               <a routerLink="../../articulo/{{nota?.resultadoID11}}" fragment="ayudaDiv" target="_blank">
+            <h1 class="card-title titulo" >{{nota?.art11}}</h1> 
+          </a>
+            <!-- <p class="card-text" style="margin-top:-10px">{{not?.subtitulo}}</p>           -->
+          
+          </div>     
+      </div>  
+       
+      <div *ngIf="this.nota.art12" class="card col-12" style="    background-color: rgb(239, 239, 239);" >
+        <a routerLink="../../articulo/{{this.nota.resultadoID12}}"  target="_blank">
+          <img class="card-img-top sombra"src="{{nota?.resultadoImagen12}}" alt="" height="200px" style="object-fit: cover;">
+        </a>
+          <div class="card-body">
+               <h6 class="categoria"><b>{{nota?.resultadoCategoria12}}</b></h6>
+               <a routerLink="../../articulo/{{nota?.resultadoID12}}" fragment="ayudaDiv" target="_blank">
+            <h1 class="card-title titulo" >{{nota?.art12}}</h1> 
+          </a>
+            <!-- <p class="card-text" style="margin-top:-10px">{{not?.subtitulo}}</p>           -->
+          
+          </div>     
+      </div>  
+
+
+       </div>

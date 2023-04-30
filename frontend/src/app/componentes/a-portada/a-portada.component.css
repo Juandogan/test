@@ -1,0 +1,224 @@
+.titular{
+  margin-top:-5px; 
+  text-shadow: 1px 1px 3px #000000; 
+  margin-left:20px;
+  color:white;
+  text-align: left;
+  font-size: 33px;
+  padding-right: 15px;
+ 
+  /* font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; */
+  font-weight: 800;
+  line-height: 40px;
+  min-height: 100% ;
+ }
+
+
+ .div-img-publi{margin: 0px;
+  display:block;
+  padding: 0px;
+  /* margin-left: -22px; */
+  margin-top: -10px;
+  /* padding-left: 10px;
+  margin-right: -20px; */
+}
+
+ .titular2{
+  margin-top:-5px; 
+  text-shadow: 1px 1px 3px #000000; 
+  margin-left:20px;
+  color:white;
+  text-align: left;
+  font-size: 30px;
+  
+  padding-right: 10px;
+  
+     /* font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; */
+  font-weight: 800;
+  line-height: 22px;
+  min-height: 100% ;
+ }
+ .categoria{
+   text-align: left; 
+   color:orange;
+   margin-left: 20px;
+   margin-top:14px;
+   text-shadow: 5px 5px 20px black;
+   
+   
+ }
+
+ .imagenPortada{
+     padding:20px; 
+     padding-left:10px; 
+     
+     object-fit: cover;
+ }
+
+
+ .imgLogo{
+  filter:drop-shadow(2px 4px 4px rgb(0, 0, 0));
+     position:absolute; 
+     top:-15px; 
+     left:3%; 
+
+
+
+  }
+
+  .logo{       width:250px;
+  }
+
+  /* Estilos del logo */
+ .h1Logo{
+  font-size: 21px; 
+  margin-left: 2px;
+  margin-top:269px;
+  color:white; 
+  text-shadow: 1px 1px 3px black;
+  background-color: orange;
+  border-radius: 6px;
+  padding: 5px;
+  padding-left:10px;
+  padding-right: 10px;
+}
+
+/* posicion del logo png */
+.lugarLogo{
+  position:absolute; 
+  top:-115px;
+  left:3%; 
+  }
+
+  .fade-in-image {
+      animation: fadeIn 2s;
+      -webkit-animation: fadeIn 2s;
+      -moz-animation: fadeIn 2s;
+      -o-animation: fadeIn 2s;
+      -ms-animation: fadeIn 2s;
+    }
+    @keyframes fadeIn {
+      0% {opacity:0;}
+      100% {opacity:1;}
+    }
+    
+    @-moz-keyframes fadeIn {
+      0% {opacity:0;}
+      100% {opacity:1;}
+    }
+    
+    @-webkit-keyframes fadeIn {
+      0% {opacity:0;}
+      100% {opacity:1;}
+    }
+    
+    @-o-keyframes fadeIn {
+      0% {opacity:0;}
+      100% {opacity:1;}
+    }
+    
+    @-ms-keyframes fadeIn {
+      0% {opacity:0;}
+      100% {opacity:1;}
+    }
+
+
+  /* Recuadro negro de la portada */
+  .cuadroTitulo{
+      position:absolute;
+      min-height: 167px;
+      top: 353px;
+
+      left:10px;
+      right:20px;
+      
+      background-color: rgba(0, 0, 0, 0.603);  
+      
+  }
+  @media (max-width:1300px){
+
+}
+
+@media (max-width:1000px){
+  .quitar1300{display: none;}
+  .cuadroTitulo{
+    top: 383px;   
+ 
+    
+}
+}
+
+@media (max-width:767px){
+  .div-img-publi{display:none}
+
+
+                  
+  }
+
+
+
+  
+
+  @media (max-width:600px){
+    .titular2{font-size: 25px; line-height: 28px; margin-left:10px}
+    .quitar{display:none}
+    .categoria{font-size:12px; margin-left:10px}
+
+    .logo{width: 160px; margin-top:20px;
+    margin-left:-5x;
+    }
+
+    @media (max-width:576px){
+      .quitarPubli{
+        display:none
+      }      
+                    
+    }
+    
+
+    .cuadroTitulo{
+      position:absolute;
+      min-height: 123px;
+      top:248px;
+
+      left:0px;
+      right:0px;
+      
+      background-color: rgba(0, 0, 0, 0.603);  
+    }
+
+    .titular{
+      
+      font-size: 29px;
+      line-height: 30px;
+      margin-left:10px;
+    }
+   
+    /* .imgLogo{
+      top:-15px; 
+      left:2%; 
+      width: 30px;
+   } */
+
+
+   
+ .imagenPortada{
+  padding: 0px!important;
+  width: 100%;
+  margin-top: 0px!important;
+  margin-bottom: -20px!;
+  
+  height: 370px;
+  
+}
+
+
+  }
+
+  
+@media (max-width:400px){
+  .titular{
+    font-size: 23px;
+  }      
+                
+}

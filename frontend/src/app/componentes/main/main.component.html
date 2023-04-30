@@ -1,0 +1,213 @@
+<div class="cuerpo margenL margenR" style="z-index:1000 ;" >
+    <div class="barraInfo">
+      <h2 *ngIf="!loading"  class=" texto  quitar600 " style="padding:5px"><b style="text-transform:uppercase; font-size: 15px; color:white" >Nro. {{numeroEdicion}} | MES:  {{articulos[14]?.titulo}} | AÑO 2023</b></h2>
+      <div style="text-align: center;">
+      <div *ngIf="loading " class="loadingio-spinner-dual-ring-xg1vnrf2b6o" style=" margin-top: 150px; min-height:1000px;"><div class="ldio-z7fu6e1den">
+
+        <div></div><div><div></div></div>
+        </div></div>
+      </div>
+      <div class="cartelInicio poner600">
+        <div>
+        <!-- <div *ngIf="!loading">
+        <button *ngIf="publiInicio" (click)="publiInicio = false" class="btn btn-danger" style="border-radius: 100%;position:absolute;top:50px; right: 10px;">X</button>
+        <a *ngIf="publiInicio"   href="http://www.culturademontania.org.ar/Suscripcion-form/inscripcion-taller.html" target="_blank">
+          <img src="../../../assets/Indice Cartel.png" width="100%" alt=""  >
+          </a>
+      </div> -->
+    </div>
+      </div>
+      <div style="margin-left: 0px; padding: 0px;">
+      <app-a-portada  *ngIf="!loading"  [data]="articulos[14]" ></app-a-portada>
+      <div  *ngIf="!loading"  class="row quitar600" style="margin-top:5px;  padding-right:35px ">
+        <div class="col-sm-6	col-md-4	col-lg-4	col-xl-4	col-xxl-4 ">
+          <div >
+           <a href="http://www.culturademontania.org.ar/Suscripcion-form/suscripcion.html" target="_blank">
+             <img src="../../../assets/banner Noticias.png" width="100%" height="500px" alt="" style="padding-left:20px"></a>
+          </div>
+        </div>
+    
+        <div class="col-sm-6	col-md-4	col-lg-4	col-xl-4	col-xxl-4">
+          <div >
+           <a href="http://www.culturademontania.org.ar/Suscripcion-form/inscripcion-entrenamiento.html" target="_blank">
+             <img src="../../../assets/otros.png" width="100%" height="500px" alt=""></a>
+          </div>
+        </div>
+    
+        <div class="col-sm-6	col-md-4	col-lg-4	col-xl-4	col-xxl-4  imgSobrante quitar" style="padding-right: 0px" >
+          <div >
+           <a href="http://www.culturademontania.org.ar/Suscripcion-form/inscripcion-equipo.html" target="_blank">
+             <img src="../../../assets/formarparte.png" width="100%" height="500px"  alt=""></a>
+          </div>
+        </div>
+
+        <div class="imgAparece col-sm-6	col-md-4	col-lg-4	col-xl-4	col-xxl-4  imgSobrante quitar" style="padding-right: 0px" >
+          <div >
+           <a href="http://www.culturademontania.org.ar/Suscripcion-form/inscripcion-equipo.html" target="_blank">
+             <img src="../../../assets/cartel.png" width="100%" height="500px"  alt=""></a>
+          </div>
+        </div>
+      </div>
+    
+
+
+        <div  *ngIf="!loading" style="text-align: left;">
+        <h1 class="indice" style="margin-top: 20px;" >INDICE - {{articulos[14]?.titulo}} <span class="numeroEdicion"> - Nro. {{numeroEdicion}} </span> </h1>
+
+        <app-b-indice [data]="articulos[14]" ></app-b-indice>
+        <a class="quitar600" href="http://www.culturademontania.org.ar/Suscripcion-form/inscripcion-taller.html" target="_blank">
+          <img src="../../../assets/Taller Indumentaria.png" width="100%" alt=""  >
+          </a>
+
+  <br>
+   <div style="color: white;">
+
+   <br>
+  <div class="fondoEditorial" style="object-fit: cover; background-image: url('../../../assets/1.png'); height: 100%!important;  ">
+  <div>
+
+   <br>
+    <p class="editorialParrafo" [innerHTML]=saltos2(this.editorial)|sanetizer></p>
+
+
+
+
+<br><br>
+
+
+  </div>
+
+</div>
+<!-- <div class="poner600">
+  <img src="../../../assets/image 12.png" width="100%" height="200px" alt="" style="margin-top: 0px;">
+  </div> -->
+
+
+<br>
+
+<div class="carousel">
+  <br>
+
+<div style="background-color: #8b5a00; margin-top: -40px;">
+
+
+
+</div>
+
+
+
+<!-- <app-carousel  [data]="articulos[9]"  ></app-carousel> -->
+<h1 class="numAnterior indice " style="display: block;">Números Anteriores</h1>
+<div style="margin-left: 10px; margin-right: 10px;">
+<app-carousel-revista></app-carousel-revista>
+</div>
+</div>
+<!-- <app-carousel2 [items]="articulos" [data]="articulos"></app-carousel2>  -->
+
+
+
+  <br><br>
+      </div>
+
+
+      </div><!-- fin de fondo orange -->
+
+      <div style="border-bottom:20px solid rgb(51, 51, 51);" >
+        <br>
+ <div class="row "  style="background-image: url('../../../assets/fondo2.png') ;
+         background-repeat: none; width: 100%; height: 550px;margin-left:0px; margin-top: -230px; ">
+<div  *ngIf="!loading  " class="flex-container quitar600 ">
+  <div class="flex-items " >
+    <div style="text-align:center ;" >
+      <a href="http://www.culturademontania.org.ar/">
+    <img class="logoCCAM" src="../../../assets/LogoCCAM_Entero.png" alt="" >
+  </a>
+  </div>
+    </div>
+
+    <div class="flex-items" style="margin-top:390px;min-width:450px">
+      <div style="text-align:left; margin-left: 10px;" >
+  <a href="mailto:info@culturademontania.org.ar" style="color:white">
+    <p style="color: white; font-size:18px">Mail: info@culturademontania.org.ar</p>
+  </a>
+
+    <p style="color: white; font-size:18px; margin-top:-20px">WhatsApp: +54 11 6979-8073</p>
+
+    <a href="https://www.instagram.com/ccam_arg/" target="_blank" style="color:white">
+    <p style="color: white; font-size:18px; margin-top:-22px">Instagram: @ccam_arg</p>
+  </a>
+  <a href="https://www.facebook.com/ccamontania/" target="_blank" style="color:white">
+    <p style="color: white; font-size:18px; margin-top:-22px">www.facebook.com/ccamontania  </p>
+    </a>
+
+
+    </div>
+      </div>
+
+      <div class="flex-items quitar1000 acom"style="align-text: left;margin-top:370px;" >
+        <div style="text-align:left;" >
+          <a href="http://www.culturademontania.org.ar/Suscripcion-form/inscripcion-equipo.html" target="_blank">
+          <img class="logonm" src="../../../assets/logonm.png" alt=""  >
+        </a>
+
+      </div>
+        </div>
+
+        <div class="flex-items quitar1000"style="margin-top:370px;">
+          <div style="text-align:left;margin-top:25px"  >
+        <p style="color:white; font-size: 20px;">Contáctate y comenzá</p>
+        <p style="color:white; margin-top:-21px; font-size: 20px;">la aventura de integrarte</p>
+        <p style="color:white; margin-top:-21px; font-size: 20px;">a la red cultural</p>
+
+
+        </div>
+          </div>
+
+        </div>
+
+          <!-- logos y texto fooder mobile -->
+        <div class="mobile" style="width:100%!important">
+          <div  *ngIf="!loading "  style="margin-top: 300px;">
+          <div>
+              <div style="text-align: center;">
+                <a href=" culturademontania.org.ar" target="_blank" >
+              <img src="../../../assets/LogoCCAM_Entero.png" alt="" class="imgmobile" >
+            </a>
+          </div>
+              </div>
+
+              <div style="text-align: center;">
+                <div >
+            <a href="mailto:info@culturademontania.org.ar" style="color:white">
+              <p style="color: white; font-size:15px!important">Mail: info@culturademontania.org.ar</p>
+            </a>
+
+              <p style="color: white; font-size:15px!important;margin-top:-18px">WhatsApp: +54 11 6979-8073</p>
+              <!-- <p style="color: white; font-size:13px!important;margin-top:-18px">WhatsApp: (+54-011) 15-3093-9814</p> -->
+              <a href="https://www.instagram.com/ccam_arg/" target="_blank" style="color:white">
+              <p style="color: white; font-size:15px!important; margin-top:-22px">Instagram: @ccam_arg</p>
+            </a>
+            <a href="https://www.facebook.com/ccamontania/" target="_blank" style="color:white">
+              <p style="color: white; font-size:15px!important; margin-top:-19px">www.facebook.com/ccamontania  </p>
+              </a>
+
+
+              </div>
+                </div>
+
+
+                  </div>
+
+
+
+        </div>
+      <!-- fin de logos y texto fooder mobile -->
+    </div>
+
+      </div>
+    </div>
+
+
+
+  </div>
+
