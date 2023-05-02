@@ -89,6 +89,11 @@ anio=""
       }
    
 
+      if(this.articulos[0]?._id === "644d9e1670bfaf2786473af5"){
+        this.numeroEdicion = 147
+        this.anio ="2023"
+      }
+   
 
       
 
@@ -105,8 +110,8 @@ anio=""
 
       this.articulos.push(aux)
       console.log('xxx',this.articulos)
-      this.numeroEdicion = 149}
-     else{this.numeroEdicion = 149}
+      this.numeroEdicion = 150}
+     else{this.numeroEdicion = 150}
       }
 
     }

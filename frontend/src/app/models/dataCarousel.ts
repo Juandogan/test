@@ -2,6 +2,18 @@ import { Carousel } from '../models/carousel'
 
 
 export const carouselDataItems : Carousel[] = [
+
+    
+    {
+        id: 0 ,
+        fecha: '',
+        titulo:'Abril 2023 - Nº 149',
+        subtitulo:'https://www.culturademontania.org.ar/Noticias/04_2023/revista_digital_ccam_ini_042023.html',        
+        link:'',
+        image:'../../../assets/abril.png',
+        order:'',
+        marginLeft :0    
+    },
     {
         id: 0 ,
         fecha: '',

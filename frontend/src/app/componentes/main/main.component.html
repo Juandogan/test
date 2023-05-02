@@ -1,6 +1,6 @@
 <div class="cuerpo margenL margenR" style="z-index:1000 ;" >
     <div class="barraInfo">
-      <h2 *ngIf="!loading"  class=" texto  quitar600 " style="padding:5px"><b style="text-transform:uppercase; font-size: 15px; color:white" >Nro. {{numeroEdicion}} | MES:  {{articulos[14]?.titulo}} | AÑO 2023</b></h2>
+      <h2 *ngIf="!loading"  class=" texto  quitar600 " style="padding:5px"><b style="text-transform:uppercase; font-size: 15px; color:white" >Nro. {{numeroEdicion}} | MES:  {{articulos[15]?.titulo}} | AÑO 2023</b></h2>
       <div style="text-align: center;">
       <div *ngIf="loading " class="loadingio-spinner-dual-ring-xg1vnrf2b6o" style=" margin-top: 150px; min-height:1000px;"><div class="ldio-z7fu6e1den">
 
@@ -18,7 +18,7 @@
     </div>
       </div>
       <div style="margin-left: 0px; padding: 0px;">
-      <app-a-portada  *ngIf="!loading"  [data]="articulos[14]" ></app-a-portada>
+      <app-a-portada  *ngIf="!loading"  [data]="articulos[15]" ></app-a-portada>
       <div  *ngIf="!loading"  class="row quitar600" style="margin-top:5px;  padding-right:35px ">
         <div class="col-sm-6	col-md-4	col-lg-4	col-xl-4	col-xxl-4 ">
           <div >
@@ -44,7 +44,7 @@
         <div class="imgAparece col-sm-6	col-md-4	col-lg-4	col-xl-4	col-xxl-4  imgSobrante quitar" style="padding-right: 0px" >
           <div >
            <a href="http://www.culturademontania.org.ar/Suscripcion-form/inscripcion-equipo.html" target="_blank">
-             <img src="../../../assets/cartel.png" width="100%" height="500px"  alt=""></a>
+             <img src="../../../assets/cartel portada.png" width="100%" height="500px"  alt=""></a>
           </div>
         </div>
       </div>
@@ -52,9 +52,9 @@
 
 
         <div  *ngIf="!loading" style="text-align: left;">
-        <h1 class="indice" style="margin-top: 20px;" >INDICE - {{articulos[14]?.titulo}} <span class="numeroEdicion"> - Nro. {{numeroEdicion}} </span> </h1>
+        <h1 class="indice" style="margin-top: 20px;" >INDICE - {{articulos[15]?.titulo}} <span class="numeroEdicion"> - Nro. {{numeroEdicion}} </span> </h1>
 
-        <app-b-indice [data]="articulos[14]" ></app-b-indice>
+        <app-b-indice [data]="articulos[15]" ></app-b-indice>
         <a class="quitar600" href="http://www.culturademontania.org.ar/Suscripcion-form/inscripcion-taller.html" target="_blank">
           <img src="../../../assets/Taller Indumentaria.png" width="100%" alt=""  >
           </a>
