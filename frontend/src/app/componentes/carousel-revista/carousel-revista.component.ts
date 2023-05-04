@@ -28,10 +28,10 @@ export class CarouselRevistaComponent implements OnInit {
     pagination: { el: '.swiper-pagination', clickable: true },
     autoHeight: true,
     allowTouchMove: true,
-    autoplay: {
-      delay: 6000,
-      disableOnInteraction: true
-    },
+    // autoplay: {
+    //   delay: 6000,
+    //   disableOnInteraction: true
+    // },
     breakpoints: {
       1024: {
         slidesPerView: 4
