@@ -87,6 +87,16 @@ anio ="2022"
           this.anio ="2023"        
         }
 
+        if(this.articulos[0]?._id === "64008f81c8818a12ad604fad"){
+          this.numeroEdicion = 148     
+          this.anio ="2023"        
+        }
+        if(this.articulos[0]?._id === "642f1a14c8818a12ad60b471"){
+          this.numeroEdicion = 149     
+          this.anio ="2023"        
+        }
+
+
         
       //  else{
         
